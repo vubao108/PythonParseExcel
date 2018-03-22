@@ -17,12 +17,13 @@ def readfile(filename, conn, tag_name):
             value = ws.cell(i,j).value
             data[i][j] = value
 
+    empty_row = 0
     for i in range(2,200):
         '''print str(i-1)'''
         q = data[i][1]
 
         if q and q.strip():
-
+            empty_row = 0
             try:
                 correct_index = int(data[i][2])
             except:
@@ -40,12 +41,13 @@ def readfile(filename, conn, tag_name):
 
 
         else:
-
+            empty_row = empty_row + 1
             print tag_name + ' :' + str(i-1)
-            break
+            if empty_row == 3:
+                break
 
 if __name__ == '__main__':
-    all_dir = r'C:\Users\vuth1\OneDrive\Documents\On tap Thi Nang luc Ha Tinh 2018 (Moi)\On tap Thi Nang luc Ha Tinh 2018 (Moi)\Vien thong\all'
+    all_dir = r'C:\Users\vuth1\OneDrive\Documents\On tap Thi Nang luc Ha Tinh 2018 (Moi)\On tap Thi Nang luc Ha Tinh 2018 (Moi)\Vien thong\all\remain'
 
     conn = load_to_sqlite.open_connection()
     for filename in os.listdir(all_dir):

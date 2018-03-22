@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sqlite3
 import  codecs
-db_file = r'D:\Dropbox\code\android\onthi_v2.db'
+db_file = r'C:\Users\vuth1\Documents\Code\onthikithuatvnpt\app\src\main\assets\databases\onthi_full_v2.db'
 
 
 def open_connection():
